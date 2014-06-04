@@ -1,0 +1,7 @@
+# ignore the following files/directories
+working/*.dat
+data
+code/build
+code/*.pyd
+code/*.so
+code/*.pyc

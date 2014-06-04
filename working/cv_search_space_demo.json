@@ -1,0 +1,40 @@
+{
+	"preproc":
+		{
+			"discrete":				false,
+			"spider":
+				{
+					"weak":		true,
+					"relabel":	true,
+					"p":		[0.5, 1, 2]
+				},
+			"feature_selection":
+				{
+					"algorithm": "interact_cfs",
+					"params":
+						{
+							"mode":			"uc",
+							"threshold":	[0, 0.0001, 0.001],
+							"backward":		[false, true],
+							"look_ahead":	[1, 3]
+						}
+				}
+		},
+	"eval":
+		{
+			"xgb_params":
+				{
+					"silent":				1,
+					"nthread":				4,
+					"bst:eta":				[0.1, 0.3],
+					"bst:max_depth":		[6, 10],
+					"bst:subsample":		[0.5, 1],
+					"objective":			"binary:logitraw",
+					"num_round":			[20, 40],
+					"eval_metric":			"ams@0.15"
+				},
+			"pos_balance_factor":		[-1, 0.1, 0.5, 1, 1.1],
+			"min_child_weight_ratio":	[-1, 0.1, 0.5, 1, 2, 3],
+			"cutoff_thresholds":		[[0.1, 0.2, 0.3, 0.4, 0.5, 0.6]]
+		}
+}

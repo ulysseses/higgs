@@ -1,0 +1,44 @@
+{
+    "best_eval_params": {
+        "pos_balance_factor": 1, 
+        "cutoff_thresholds": [
+            0.1, 
+            0.2, 
+            0.3, 
+            0.4, 
+            0.5, 
+            0.6
+        ], 
+        "xgb_params": {
+            "bst:subsample": 0.5, 
+            "silent": 1, 
+            "eval_metric": "ams@0.15", 
+            "scale_pos_weight": 19811.9312053522, 
+            "nthread": 10, 
+            "bst:max_depth": 6, 
+            "num_round": 20, 
+            "objective": "binary:logitraw", 
+            "bst:min_child_weight": 2, 
+            "bst:eta": 0.1
+        }
+    }, 
+    "best_preproc_params": {
+        "discrete": false, 
+        "feature_selection": {
+            "params": {
+                "threshold": 0.0001, 
+                "backward": true, 
+                "mode": "uc", 
+                "look_ahead": 1
+            }, 
+            "algorithm": "interact_cfs"
+        }, 
+        "spider": {
+            "weak": true, 
+            "relabel": true, 
+            "p": 1
+        }, 
+        "i_reduced": 5
+    }, 
+    "best_score": 0.28550917083150507
+}
